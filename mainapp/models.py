@@ -75,7 +75,7 @@ class Lesson(models.Model):
         verbose_name='Date of creating',
         editable=False
     )
-    update_date = models.DateTimeField(
+    updated = models.DateTimeField(
         auto_now=True,
         verbose_name='Date of editing',
         editable=False
