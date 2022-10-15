@@ -1,0 +1,69 @@
+[
+  {
+    "model": "mainapp.news",
+    "pk": 1,
+    "fields": {
+      "title": "Новость дня",
+      "preamble": null,
+      "body": "Сегодня открывается доступ к новому курсу!",
+      "body_as_markdown": false,
+      "create_date": "2022-10-14T13:19:49.912Z",
+      "update_date": "2022-10-14T13:20:02.859Z",
+      "deleted": false
+    }
+  },
+  {
+    "model": "mainapp.news",
+    "pk": 2,
+    "fields": {
+      "title": "Новость месяца",
+      "preamble": null,
+      "body": "В GB стартовал новый проект Путь к успеху!",
+      "body_as_markdown": false,
+      "create_date": "2022-10-15T08:09:23.833Z",
+      "update_date": "2022-10-15T08:09:39.581Z",
+      "deleted": false
+    }
+  },
+  {
+    "model": "mainapp.news",
+    "pk": 3,
+    "fields": {
+      "title": "Новости образования",
+      "preamble": null,
+      "body": "Что происходит в мире в сфере образования",
+      "body_as_markdown": false,
+      "create_date": "2022-10-15T08:10:02.946Z",
+      "update_date": "2022-10-15T08:10:05.721Z",
+      "deleted": false
+    }
+  },
+  {
+    "model": "mainapp.news",
+    "pk": 4,
+    "fields":
+    {
+      "title": "Мировые новости",
+      "preamble": null,
+      "body": "Миру нужны грамотные IT-специалисты",
+      "body_as_markdown": false,
+      "create_date": "2022-10-15T08:10:15.690Z",
+      "update_date": "2022-10-15T08:10:18.573Z",
+      "deleted": false
+    }
+  },
+  {
+  "model": "mainapp.news",
+    "pk": 5,
+    "fields":
+    {
+      "title": "Архив Новостей",
+      "preamble": null,
+      "body": "Много букв",
+      "body_as_markdown": false,
+      "create_date": "2022-10-15T08:10:30.254Z",
+      "update_date": "2022-10-15T08:10:31.978Z",
+      "deleted": false
+    }
+  }
+]
