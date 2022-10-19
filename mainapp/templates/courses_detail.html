@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static markdownify %}
 
 {% block title %}
 {{ course_object.name }}
@@ -13,7 +13,11 @@
     <div class="col-sm-12 col-md-6 col-lg-8 order-2 order-md-1">
         <div class="row h-100">
             <div class="col-12">
-
+                {% if course_object.description_as_markdown %}
+                {{ course_object.description|markdownify }}
+                {% else %}
+                {{ course_object.description }}
+                {% endif %}
             </div>
             <div class="col-12 align-self-end">
                 <p>
@@ -28,7 +32,7 @@
     <div class="col-sm-12 col-md-6 col-lg-4 order-1 order-md-2">
         <div class="row h-100">
             <div class="col-12 align-self-start">
-                <img class="w-100" src="#">
+                <img class="w-100" src="{% static course_object.cover %}">
             </div>
             <div class="col-12 align-self-end d-none d-md-block">
                 <p class="text-center mt-2">
@@ -55,7 +59,7 @@
 </div>
 <div class="accordion" id="accordionLessons">
 
-    {% for item in lessons %}
+    {% for item in lesson %}
     <div class="card">
         <div class="card-header" id="headLessonPk{{ item.pk }}">
             <h2 class="mb-0">
@@ -73,11 +77,15 @@
             <div class="card-body">
                 <div class="row justify-content-center">
                     <div class="col-12 text-center">
-                        <img src="#"
+                        <img src="{% static 'img/no_image.svg' %}"
                             width="250px">
                     </div>
                     <div class="col-12">
-
+                        {% if item.description_as_markdown %}
+                        {{ item.description|markdownify }}
+                        {% else %}
+                        {{ item.description }}
+                        {% endif %}
                     </div>
                 </div>
             </div>

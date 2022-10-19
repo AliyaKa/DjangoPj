@@ -71,7 +71,7 @@ class Lesson(models.Model):
     description_as_markdown = models.BooleanField(
         verbose_name="As markdown", default=False
     )
-    create_date = models.DateTimeField(
+    created = models.DateTimeField(
         auto_now_add=True,
         verbose_name='Date of creating',
         editable=False
