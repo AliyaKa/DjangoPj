@@ -30,6 +30,7 @@ class News(models.Model):
         self.deleted = True
         self.save()
 
+
 class Courses(models.Model):
     name = models.CharField(max_length=256, verbose_name='Name')
     description = models.TextField(blank=False, null=False, verbose_name='Description')
