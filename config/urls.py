@@ -23,8 +23,8 @@ from authapp.apps import AuthappConfig
 from mainapp.apps import MainappConfig
 
 urlpatterns = [
-    path("", RedirectView.as_view(url='mainapp')),
     path('admin/', admin.site.urls),
+    path("", RedirectView.as_view(url='mainapp')),
     path('social_auth/', include('social_django.urls', namespace='social')),
     path('mainapp/', include('mainapp.urls', namespace=MainappConfig.name)),
     path('authapp/', include('authapp.urls', namespace=AuthappConfig.name)),

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'mainapp',
     'markdownify.apps.MarkdownifyConfig',
     'authapp',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -148,5 +149,8 @@ MEDIA_ROOT = BASE_DIR / "media"
 # OAuth
 SOCIAL_AUTH_GITHUB_KEY = 'Iv1.892a6f65ee30d2ca'
 SOCIAL_AUTH_GITHUB_SECRET = '5d86b4360a22c9305b395d68e033975d40c56532'
+
+# Forms CSS
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 

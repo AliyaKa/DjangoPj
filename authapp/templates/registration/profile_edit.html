@@ -1,6 +1,8 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
+
+{% include 'components/top_nav_panel.html' %}
 <div class="row justify-content-center my-2">
   <div class="col-lg-6">
     <h3>Редактирование профиля</h3>
@@ -70,5 +72,7 @@
     </form>
   </div>
 </div>
+
+{% include 'components/footer.html' %}
 
 {% endblock content %}
