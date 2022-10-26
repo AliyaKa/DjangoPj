@@ -1,11 +1,10 @@
 
 {% extends 'base.html' %}
-
+{% load email_to_link crispy_forms_tags %}
 {% block content %}
 
 {% include 'components/top_nav_panel.html' %}
 
-{% load email_to_link %}
 
     <div class="container-md">
 
@@ -97,7 +96,16 @@
 
     </div>
 
-
+{% if form %}
+<p>
+  <h3>Отправить сообщение в техподдержку</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary btn-block">Отправить</button>
+  </form>
+</p>
+{% endif %}
 
 {% include 'components/footer.html' %}
 {% endblock content %}

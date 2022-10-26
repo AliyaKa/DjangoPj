@@ -4,7 +4,6 @@ from mainapp.managers.news_manager import NewsManager
 from django.utils.translation import gettext_lazy as _
 
 
-
 class News(models.Model):
     objects = NewsManager()
     title = models.CharField(max_length=256, verbose_name='title')
