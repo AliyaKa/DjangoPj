@@ -4,6 +4,11 @@ from mainapp.managers.news_manager import NewsManager
 from django.utils.translation import gettext_lazy as _
 
 
+class NewsManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(deleted=False)
+
+
 class News(models.Model):
     objects = NewsManager()
     title = models.CharField(max_length=256, verbose_name='title')
@@ -25,8 +30,8 @@ class News(models.Model):
     )
     deleted = models.BooleanField(default=False)
 
-    def __str__(self):
-        return self.title
+    def __str__(self) -> str:
+        return f"{self.pk} {self.title}"
 
     def delete(self, *args):
         self.deleted = True

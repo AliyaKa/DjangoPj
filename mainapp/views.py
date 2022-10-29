@@ -1,12 +1,12 @@
 import logging
 
-from django.core.cache import cache
-
 from django.conf import settings
 from django.contrib.auth.mixins import (
     PermissionRequiredMixin,
     LoginRequiredMixin,
-    UserPassesTestMixin, )
+    UserPassesTestMixin,
+)
+from django.core.cache import cache
 from django.http import JsonResponse, FileResponse
 from django.shortcuts import get_object_or_404
 from django.template.loader import render_to_string
@@ -19,11 +19,12 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
     View, )
-from mainapp import forms as mainapp_forms
-from mainapp import models as mainapp_models
+
 from django.contrib import messages
 from django.http.response import HttpResponseRedirect
 from django.utils.translation import gettext_lazy as _
+from mainapp import forms as mainapp_forms
+from mainapp import models as mainapp_models
 from mainapp import tasks as mainapp_tasks
 
 logger = logging.getLogger(__name__)
@@ -109,6 +110,12 @@ class CoursesDetailView(TemplateView):
             cache.set(
                 f'feedback_list_{pk}', context['feedback_list'], timeout=300
             )
+            # Archive object for test
+            # import pickle
+            # with open(
+            #    f"mainapp/fixtures/006_feedback_list_{pk}.bin", "wb"
+            #) as outf:
+            #    pickle.dump(context["feedback_list"], outf)
         else:
             context['feedback_list'] = cached_feedback
 
@@ -165,7 +172,6 @@ class ContactsPageView(TemplateView):
                     _('You can send only one message per 5 minutes'),
                 )
         return HttpResponseRedirect(reverse_lazy('mainapp:contacts'))
-
 
 
 class DocSitePageView(TemplateView):
