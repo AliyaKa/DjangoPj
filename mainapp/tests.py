@@ -134,7 +134,7 @@ class TestCoursesWithMock(TestCase):
             self.assertEqual(result.status_code, HTTPStatus.OK)
             self.assertTrue(mocked_cache.called)
 
-
+'''
 class TestTaskMailSend(TestCase):
     fixtures = ("authapp/fixtures/001_user_admin.json",)
 
@@ -218,3 +218,4 @@ class TestNewsSelenium(StaticLiveServerTestCase):
         super().tearDown()
 
 
+'''
